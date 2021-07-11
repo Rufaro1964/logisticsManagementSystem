@@ -12,8 +12,11 @@ display: flex;
 align-items: center;
 justify-content: center;
 font-size: 18px;
-background-image: url("../background.jpeg");
-background-size:cover ;
+background: url("../background.jpeg") no-repeat center fixed;
+-webkit-background-size:cover ;
+-moz-background-size:cover ;
+-moz-background-size:cover ;
+background-size: cover;
 }
 
 .container{
@@ -31,6 +34,12 @@ background-size:cover ;
 .form__button {
     font: 500 1rem 'Quicksand',sans-serif;
 }
+
+.form--hidden{
+    display: none;
+}
+
+
 .form > *:first-child{
     margin-top: 0;
 }
@@ -80,4 +89,43 @@ background-size:cover ;
 .form__input-error{
     color: var(--color-error);
     border-color: var(--color-error);
+}
+.form__input-error-message{
+
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+    color:var(--color-error);
+}
+
+.form__button{
+    width: 100%;
+    padding: 1rem 2rem;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: floralwhite;
+    border: none;
+    border-radius: var(--border-radius);
+    outline: none;
+    cursor: pointer;
+    background:var(--color-primary);
+    
+}
+
+.form__button:hover{
+    background: var(--color-primary-dark);
+}
+.form__button:active{
+    transform: scale(0.98);
+}
+
+.form__text{
+    text-align: center;
+}
+.form__link{
+    color:var(--color-secondary);
+    text-decoration: none;
+    cursor: pointer;
+}
+.form__link:hover{
+    text-decoration:underline;
 }
