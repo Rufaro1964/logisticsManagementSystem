@@ -1,0 +1,17 @@
+body{
+--color-primary: #009579;
+--color-primary-dark: #007f67;
+--color-secondary: #252c6a;
+--color-error: #cc3333;
+--color-success: #4bb544;
+--border-radius: 4px;
+
+margin: 0;
+height: 100vh;
+display: flex;
+align-items: center;
+justify-items: center;
+font-size: 18px;
+background-image: url("../images.jpeg");
+background-size:cover ;
+}
