@@ -1,7 +1,8 @@
 <?php
 
     require('../controller/signUpController.php');
-
+    
+    $signUpController = new SignUpController();
 
     if(isset($_POST['submit'])){
         if(isset($_POST['username']) && isset($_POST['email']) && isset($_POST['password']) && isset($_POST['confirm_password'])){
@@ -11,17 +12,7 @@
             $password = $_POST['password'];
             $confirm_password = $_POST['confirm_password'];
 
-            if($password != $confirm_password){
-                echo "<script>alert('Passwords do not match. Please check and verify that the passwords match.')</script>";
-            }else{
-                $signUpController = new SignUpController();
-                if($signUpController->signUp($username, $email, $password)){
-                    echo "<script>alert('User has been added to the database.')</script>";
-                }else{
-                    echo "<script>alert('An error occured while adding the user.')</script>";
-                }
-            }
-            
+            echo $signUpController->signUp($username, $email, $password, $confirm_password);
         }
     }
 ?>

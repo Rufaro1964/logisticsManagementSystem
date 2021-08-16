@@ -18,6 +18,17 @@
             $this->dbConnection = $this->database->connect();
         }
 
+
+
+        /**
+         * @return: bool->false OR redirects to the details-entry-form.php
+         * @param: $username (String)
+         * @param: $password (String)
+         * 
+         * If the DB query is successful and a row is returned, the user is directed to details-entry page
+         * to finish up with the registration process.
+         */
+        
         public function signIn($username, $password){
 
             $statement = $this->dbConnection->prepare("SELECT * FROM users WHERE `email`=? AND `password`=? LIMIT 1");

@@ -3,6 +3,10 @@
 
     if(!isset($_SESSION['id'])){
         header('Location: sign-in.php');
+
+    }else{
+        $session_id = $_SESSION['id'];
+
     }
 
 ?>
