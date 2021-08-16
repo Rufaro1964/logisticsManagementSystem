@@ -1,12 +1,19 @@
 <?php
 
-    include('../view/sign-in.html');
+    require('../database/connection.php');
 
-    
-    if(isset($_POST['submit'])){
-        if(isset($_POST['username']) && isset($_POST['password'])){
-            // Check if the user exists...
+    class SignInController{
+
+        
+        private $database;
+        private $dbConnection;
+
+        public function __construct(){
+            $this->database = new Database();
+            $this->dbConnection = $this->database->connect();
         }
+
+        
     }
 
 ?>
