@@ -1,5 +1,14 @@
 <?php
-    
+    require_once(__DIR__.'/../controller/signInController.php');
+
+    $signInController = new SignInController();
+
+    if(isset($_POST['username']) AND isset($_POST['password'])){
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+        $signInController->signIn($username, $password);
+    }
+
 
 ?>
 
@@ -25,15 +34,15 @@
 
     <div class="container">
 
-        <form class="form" id="signIn">
+        <form action="" method="POST" class="form" id="signIn">
             <h1 class="form__title">Sign In</h1>
 
             <div class="form__input-group">
-                <input type="text" id="loginUsername" class="form__input" autofocus placeholder="Username" name="username" required>
+                <input type="text" id="loginUsername" class="form__input" autofocus placeholder="email" name="username" required>
             </div><br>
 
             <div class="form__input-group">
-                <input type="password" class="form__input" autofocus placeholder="Password" name="password" required>
+                <input type="password" class="form__input" autofocus placeholder="password" name="password" required>
             </div>
             <button class="form__button" type="submit">Log in</button>
 

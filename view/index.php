@@ -20,25 +20,25 @@
                     <a class="nav-link" href="#">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">About</a>
+                    <a class="nav-link" href="#body">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
+                    <a class="nav-link" href="#footer">Contact</a>
                 </li>
             </ul>
         </div>
     </nav>
-    <header class="page-header header container-fluid">
+    <header class="page-header header container-fluid" id="header">
         <div class="overlay"></div>
         <div class="description">
             <h1>Welcome to the Landing Page!</h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque interdum quam odio, quis placerat ante luctus eu. Sed aliquet dolor id sapien rutrum, id vulputate quam iaculis. Suspendisse consectetur mi id libero fringilla, in pharetra sem ullamcorper.</p>
-            <a class="btn btn-outline-light btn-lg download-button" href="./sign-in.html">login!</a>
-            <a class="btn btn-outline-light btn-lg download-button" href="./sign-up.html">Sign up!</a>
+            <a class="btn btn-outline-light btn-lg download-button" href="./sign-in.php">login!</a>
+            <a class="btn btn-outline-light btn-lg download-button" href="./sign-up.php">Sign up!</a>
             
         </div>
     </header>
-    <div class="container features">
+    <div class="container features" id="body">
         <div class="row">
             <div class="col-lg-4 col-md-4 col-sm-12">
                 <h3 class="feature-title">Lorem ipsum</h3>
@@ -51,7 +51,7 @@
                 <img src="../assets/images/image3.jpg" class="img-fluid">
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque interdum quam odio, quis placerat ante luctus eu. Sed aliquet dolor id sapien rutrum, id vulputate quam iaculis.</p>
             </div>
-            <div class="card col-lg-3 col-md-3 col-sm-4 text-center">
+            <div class="col-lg-4 col-md-4 col-sm-12">
                 <img class="card-img-top rounded-circle" src="../assets/images/image5.jpg" alt="Card image">
                 <div class="card-body">
                     <h4 class="card-title">Jane Doe</h4>
@@ -60,7 +60,7 @@
             </div>
         </div>
     </div>
-    <footer class="page-footer">
+    <footer class="page-footer" id="footer">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-md-8 col-sm-12">
@@ -76,7 +76,7 @@
             <br/>+ 01 234 567 89</p>
         </div>
     <div>
-    <div class="footer-copyright text-center">© 2020 Copyright: MyWebsite.com</div>
+    <div class="footer-copyright text-center">&copy; <?php echo date('Y'); ?> Logistics Zambia</div>
 </footer>
     
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>

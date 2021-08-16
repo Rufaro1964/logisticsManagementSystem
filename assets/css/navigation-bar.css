@@ -1,8 +1,10 @@
 body {
+    animation: transitionIn 0.7;
     padding: 0;
     margin: 0;
     background: #f2f6e9;
 }
+
 h1{
     color:blanchedalmond;
 }
