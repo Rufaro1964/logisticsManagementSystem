@@ -1,11 +1,43 @@
 <?php 
     session_start();
 
+    require_once(__DIR__."/../controller/signUpController.php");
+
     if(!isset($_SESSION['id'])){
         header('Location: sign-in.php');
 
     }else{
+
+        $signUpController = new SignUpController();
+
         $session_id = $_SESSION['id'];
+
+        if(isset($_POST['firstname']) AND isset($_POST['lastname']) AND isset($_POST['nrc']) AND isset($_POST['dob']) AND isset($_POST['gender']) AND isset($_POST['phone']) AND isset($_POST['email']) AND isset($_POST['address']) AND isset($_POST['country']) AND isset($_POST['nok_firstname']) AND isset($_POST['nok_lastname']) AND isset($_POST['relationship']) AND isset($_POST['nok_contact']) AND isset($_POST['license_number']) AND isset($_POST['year_of_issue']) AND isset($_POST['year_of_expiry']) AND isset($_POST['class']) AND isset($_POST['other_class'])){
+            
+            $firstname = $_POST['firstname'];
+            $lastname = $_POST['lastname'];
+            $nrc = $_POST['nrc'];
+            $dob = $_POST['dob'];
+            $gender = $_POST['gender'];
+            $phone = $_POST['phone'];
+            $email = $_POST['email'];
+            $address = $_POST['address'];
+            $country = $_POST['country'];
+            $nok_firstname = $_POST['nok_firstname'];
+            $nok_lastname = $_POST['nok_lastname'];
+            $relationship = $_POST['relationship'];
+            $nok_contact = $_POST['nok_contact'];
+            $license_number = $_POST['license_number'];
+            $year_of_issue = $_POST['year_of_issue'];
+            $year_of_expiry = $_POST['year_of_expiry'];
+            $class = $_POST['class'];
+            $other_class = $_POST['other_class'];
+
+            $signUpController->updateUser($session_id, $firstname, $lastname, $address, $phone, $nrc, $gender, $country, $dob);
+            $signUpController->addToNextOfKin($session_id, $nok_firstname, $nok_lastname, $relationship, $nok_contact);
+            $signUpController->addToLicense($session_id, $license_number, $year_of_issue, $year_of_expiry, $class, $other_class);
+
+        }
     }
 
 ?>
@@ -59,7 +91,7 @@
                     <section>
                         <h1 class="text-center text-capitalize">Candidate Details<br></h1>
                         <div class="container">
-                            <form id="application-form" class="well">
+                            <form action="" method="POST" id="application-form" class="well">
                                 <div class="form-group">
                                     <div class="form-row">
                                         <div class="col">
@@ -408,21 +440,10 @@
                                         </div>
                                     </div>
                                 </div>
-                                <!--
-                                <div class="form-group">
-                                    <div class="form-row">
-                                        <div class="col">
-                                            <p>Qualification</p><textarea class="form-control" type="text" required="" placeholder="Ex.  2000 - 2004   Prague Engineer College ,etc" name="Qualification"></textarea>
-                                        </div>
-                                        <div class="col">
-                                            <p>Experience</p><input class="form-control" type="text" required="" name="" placeholder="Ex. Associate Software Engineer at Zendesk">
-                                        </div>
-                                    </div>
-                                </div>
-                            -->
+                                
                                 <div class="form-group"><p><strong>Your Picture </strong><span class="text-danger">*</span></p>
-                                    <div class="file">
-                                    <!-- Upload image input-->
+                                    <!-- <div class="file">
+                                    Upload image input
                                         <div class="input-group mb-3 px-2 py-2 rounded-pill bg-white shadow-sm ">
                                             <input id="upload" type="file" onchange="readURL(this);" class="form-control border-0">
                                             <label id="upload-label" for="upload" class="font-weight-light text-muted">Choose file</label>
@@ -431,28 +452,21 @@
                                             </div>
                                         </div>
 
-                                        <!-- Uploaded image area-->
-                                        <p class="font-italic  text-center">The image uploaded will be rendered inside the box below.</p>
-                                        <div class="image-area mt-4 text-dark">
-                                            <img id="imageResult" src="#" alt="" class="img-fluid rounded shadow-sm mx-auto d-block"  width=200>
-                                        </div>
-                                        <div class="col d-none">
-                                            <p><strong>URL</strong><span class="text-danger">*</span></p>
-                                            <input id="urllink" name="url" type="url" class="form-control" readonly/>
-                                        </div>
-                                    </div>
-                                </div>
+                                    </div> -->
+                                </div><br>
                                 <div class="form-group justify-content-center d-flex">
                                     <div id="submit-btn">
-                                        <div class="sbt form-row"><button class="btn btn-primary btn-light m-0 rounded-pill px-4" type="button" style="min-width: 500px;" action method="POST" target="hidden_iframe">Submit</button></div>
+                                        <div class="sbt form-row">
+                                            <button class="btn btn-primary m-0 rounded-pill px-4" type="submit" style="min-width: 500px;"target="hidden_iframe">Submit</button>
+                                        </div>
                                     </div>
                                 </div>
                             </form>
-                        </div>
-                        <div class="col">
+                        </div><br>
+                        <!-- <div class="col">
                             <h3 id="fail" class="text-center text-danger d-none"><br>Form not Submitted&nbsp;<a href="contact.html">Try Again</a><br><br></h3>
                             <h3 id="success-1" class="text-center text-success d-none"><br>Form Submitted Successfully&nbsp;<a href="contact.html">Send Another Response</a><br><br></h3>
-                        </div>
+                        </div> -->
                     </section>
                 </div>
             
@@ -474,7 +488,7 @@
                         <br/>+ 01 234 567 89</p>
                     </div>
                 <div>
-                <div class="footer-copyright text-center">© 2021 Copyright: LMS.com</div>
+                <div class="footer-copyright text-center">&copy; <?php echo date('Y')." Copyright of LMS.Com"; ?></div>
             </footer>
         </div><a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a>
     </div>
