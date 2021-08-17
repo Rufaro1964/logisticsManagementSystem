@@ -53,7 +53,7 @@
             </div>
             <button class="form__button" type="submit" name="submit">Continue</button>
             <p class="form__text">
-                <a class="form__link" href="sign-in.html" id="linkLogin">Already have an account? Sign in</a>
+                <a class="form__link" href="sign-in.php" id="linkLogin">Already have an account? Sign in</a>
             </p>
         </form>
     </div>
