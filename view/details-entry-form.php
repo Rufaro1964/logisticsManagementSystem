@@ -32,11 +32,16 @@
             $year_of_expiry = $_POST['year_of_expiry'];
             $class = $_POST['class'];
             $other_class = $_POST['other_class'];
+            $first_login = 'no';
 
-            $signUpController->updateUser($session_id, $firstname, $lastname, $address, $phone, $nrc, $gender, $country, $dob);
-            $signUpController->addToNextOfKin($session_id, $nok_firstname, $nok_lastname, $relationship, $nok_contact);
-            $signUpController->addToLicense($session_id, $license_number, $year_of_issue, $year_of_expiry, $class, $other_class);
-
+            if($signUpController->updateUser($session_id, $firstname, $lastname, $address, $phone, $nrc, $gender, $country, $dob, $first_login)){
+                if($signUpController->addToNextOfKin($session_id, $nok_firstname, $nok_lastname, $relationship, $nok_contact)){
+                    if($signUpController->addToLicense($session_id, $license_number, $year_of_issue, $year_of_expiry, $class, $other_class)){
+                        echo "<script>alert('User profile has been updated.')</script>";
+                        header("Refresh:0; url=home.php");
+                    }
+                }
+            }
         }
     }
 

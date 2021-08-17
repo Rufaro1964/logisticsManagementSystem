@@ -21,14 +21,14 @@
 
 
         /**
-         * @return: bool->false OR redirects to the details-entry-form.php
+         * @return: bool->false OR redirects to a page.
          * @param: $username (String)
          * @param: $password (String)
          * 
          * If the DB query is successful and a row is returned, the user is directed to details-entry page
          * to finish up with the registration process.
          */
-        
+
         public function signIn($username, $password){
 
             $statement = $this->dbConnection->prepare("SELECT * FROM users WHERE `email`=? AND `password`=? LIMIT 1");
@@ -39,8 +39,16 @@
             if($result->num_rows > 0){
                 $user = $result->fetch_assoc();
                 $_SESSION['id'] = $user['id'];
+                $firstLogin = $user['first_login'];
+                
                 if(isset($_SESSION['id'])){
-                    header('Location: details-entry-form.php');
+                    
+                    if($firstLogin === 'yes'){
+                        header('Location: details-entry-form.php');
+                    }else{
+                        header('Location: home.php');
+                    }
+
                 }
 
             }else{

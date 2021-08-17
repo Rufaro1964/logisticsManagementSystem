@@ -32,6 +32,7 @@
                 
                 if($statement->execute()){
                     return "<script>alert('User has been successfully added to the database.')</script>";
+
                 }else{
                     return "<script>alert('Error when creating a new user.')</script>";
                 }
@@ -41,14 +42,14 @@
 
 
 
-        public function updateUser($user_id, $firstname, $lastname, $address, $phone, $identification_no, $gender, $country, $dob){
+        public function updateUser($user_id, $firstname, $lastname, $address, $phone, $identification_no, $gender, $country, $dob, $first_login){
 
-            $statement = $this->dbConnection->prepare("UPDATE users SET `firstname`=?, `lastname`=?, `address`=?, `gender`=?, `d_o_b`=?, `country`=?, `nrc`=?, `phone`=? WHERE users.id=?");
-            $statement->bind_param("ssssssssi", $firstname, $lastname, $address, $gender, $dob, $country, $identification_no, $phone, $user_id);
+            $statement = $this->dbConnection->prepare("UPDATE users SET `firstname`=?, `lastname`=?, `address`=?, `gender`=?, `d_o_b`=?, `country`=?, `nrc`=?, `phone`=?, `first_login`=? WHERE users.id=?");
+            $statement->bind_param("sssssssssi", $firstname, $lastname, $address, $gender, $dob, $country, $identification_no, $phone,$first_login, $user_id);
             if($statement->execute()){
-
+                return true;
             }
-            
+            return false;   
         }
 
 
@@ -59,11 +60,9 @@
 
             $statement->bind_param("isssss", $user_id, $license_number, $class, $other_class, $year_of_issue, $year_of_expiry);
             if($statement->execute()){
-
-            }else{
-
+                return true;
             }
-
+            return false;
         }
 
 
@@ -73,10 +72,9 @@
             $statement = $this->dbConnection->prepare("INSERT INTO next_of_kin (`user_id`, `firstname`, `lastname`, `relationship`, `phone`) VALUES (?,?,?,?,?)");
             $statement->bind_param("issss", $user_id, $firstname, $lastname, $relationship, $phone);
             if($statement->execute()){
-
-            }else{
-
+                return true;
             }
+            return false;
 
         }
     }
