@@ -5,14 +5,14 @@
     $signUpController = new SignUpController();
 
     
-    if(isset($_POST['username']) && isset($_POST['email']) && isset($_POST['password']) && isset($_POST['confirmPassword'])){
+    if(isset($_POST['username']) && isset($_POST['email']) && isset($_POST['password'])){
         
         $email = $_POST['email'];
         $username = $_POST['username'];
         $password = $_POST['password'];
-        $confirm_password = $_POST['confirmPassword'];
 
-        $signUpController->signUp($username, $email, $password, $confirm_password);
+        echo $signUpController->signUp($username, $email, $password);
+        exit;
     }
 ?>
 
