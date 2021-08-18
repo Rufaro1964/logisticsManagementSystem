@@ -54,6 +54,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Blank Page - Brand</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
     <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
@@ -462,7 +463,7 @@
                                 <div class="form-group justify-content-center d-flex">
                                     <div id="submit-btn">
                                         <div class="sbt form-row">
-                                            <button class="btn btn-primary m-0 rounded-pill px-4" type="submit" style="min-width: 500px;"target="hidden_iframe">Submit</button>
+                                            <button class="btn btn-primary m-0 rounded-pill px-4" type="submit" id="submit" style="min-width: 500px;"target="hidden_iframe">Submit</button>
                                         </div>
                                     </div>
                                 </div>
@@ -497,12 +498,13 @@
             </footer>
         </div><a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a>
     </div>
-    <script src="assets/js/jquery.min.js"></script>
+    <script src="../assets/javascript/main.js"></script>
+    <!-- <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/chart.min.js"></script>
     <script src="assets/js/bs-init.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.js"></script>
-    <script src="assets/js/theme.js"></script>
+    <script src="assets/js/theme.js"></script> -->
 </body>
 
 </html>
