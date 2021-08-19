@@ -5,6 +5,10 @@ body {
     background: #f2f6e9;
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 h1{
     color:blanchedalmond;
 }
