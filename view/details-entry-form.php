@@ -12,7 +12,7 @@
 
         $session_id = $_SESSION['id'];
 
-        if(isset($_POST['firstname']) AND isset($_POST['lastname']) AND isset($_POST['nrc']) AND isset($_POST['dob']) AND isset($_POST['gender']) AND isset($_POST['phone']) AND isset($_POST['email']) AND isset($_POST['address']) AND isset($_POST['country']) AND isset($_POST['nok_firstname']) AND isset($_POST['nok_lastname']) AND isset($_POST['relationship']) AND isset($_POST['nok_contact']) AND isset($_POST['license_number']) AND isset($_POST['year_of_issue']) AND isset($_POST['year_of_expiry']) AND isset($_POST['class']) AND isset($_POST['other_class'])){
+        if(isset($_POST['firstname']) AND isset($_POST['lastname']) AND isset($_POST['nrc']) AND isset($_POST['dob']) AND isset($_POST['gender']) AND isset($_POST['phone']) AND isset($_POST['email']) AND isset($_POST['address']) AND isset($_POST['country']) AND isset($_FILES['file'])){
             
             $firstname = $_POST['firstname'];
             $lastname = $_POST['lastname'];
@@ -20,28 +20,12 @@
             $dob = $_POST['dob'];
             $gender = $_POST['gender'];
             $phone = $_POST['phone'];
-            $email = $_POST['email'];
             $address = $_POST['address'];
             $country = $_POST['country'];
-            $nok_firstname = $_POST['nok_firstname'];
-            $nok_lastname = $_POST['nok_lastname'];
-            $relationship = $_POST['relationship'];
-            $nok_contact = $_POST['nok_contact'];
-            $license_number = $_POST['license_number'];
-            $year_of_issue = $_POST['year_of_issue'];
-            $year_of_expiry = $_POST['year_of_expiry'];
-            $class = $_POST['class'];
-            $other_class = $_POST['other_class'];
             $first_login = 'no';
+            $file = $_FILES['file'];
 
-            if($signUpController->updateUser($session_id, $firstname, $lastname, $address, $phone, $nrc, $gender, $country, $dob, $first_login)){
-                if($signUpController->addToNextOfKin($session_id, $nok_firstname, $nok_lastname, $relationship, $nok_contact)){
-                    if($signUpController->addToLicense($session_id, $license_number, $year_of_issue, $year_of_expiry, $class, $other_class)){
-                        echo "<script>alert('User profile has been updated.')</script>";
-                        header("Refresh:0; url=home.php");
-                    }
-                }
-            }
+            
         }
     }
 
@@ -127,12 +111,12 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <p><strong>Number&nbsp;</strong><span class="text-danger">*</span></p><input class="form-control" type="number" name="phone" placeholder="7777777777">
+                                    <p><strong>Number&nbsp;</strong><span class="text-danger">*</span></p><input class="form-control" type="number" name="phone" placeholder="0977555555">
                                 </div>
-
+<!-- 
                                 <div class="form-group">
                                     <p><strong>Email&nbsp;</strong><span class="text-danger">*</span></p><input class="form-control" type="email" name="email" placeholder="user@domain.com">
-                                </div>
+                                </div> -->
                                 
                                 <div class="form-group">
                                     <p><strong>Address&nbsp;</strong><span class="text-danger">*</span></p>
@@ -395,7 +379,7 @@
                               
                               
                                 <!-- NEXT OF KIN INFORMATION STARTS FROM HERE -->
-                                <div class="form-group">
+                                <!-- <div class="form-group">
                                     <h1 class="text-center text-capitalize">Next of kin<br></h1>  
                                     <div class="form-row">
                                         <div class="col">
@@ -413,12 +397,12 @@
                                             <p><strong>Contact</strong>&nbsp;<span class="text-danger">*</span></p><input class="form-control" type="text" required="" name="nok_contact">
                                         </div>
                                     </div>
-                                </div><br><br><hr>
+                                </div><br><br><hr> -->
 
 
 
                                 <!-- LICENSE INFROMATION STARTS FROM HERE -->
-                                <div class="form-group">
+                                <!-- <div class="form-group">
                                     <h1 class="text-center text-capitalize">Driving License<br></h1> 
                                     <div class="form-row">
                                         <div class="col-md-6">
@@ -445,34 +429,26 @@
                                             <p><strong>Other Class</strong>&nbsp;<span class="text-danger">*</span></p><input class="form-control" type="text" required="" name="other_class">
                                         </div>
                                     </div>
-                                </div>
+                                </div><br> -->
                                 
                                 <div class="form-group"><p><strong>Your Picture </strong><span class="text-danger">*</span></p>
-                                    <!-- <div class="file">
-                                    Upload image input
+                                    <div class="file">
+                                    <!-- Upload image input -->
                                         <div class="input-group mb-3 px-2 py-2 rounded-pill bg-white shadow-sm ">
-                                            <input id="upload" type="file" onchange="readURL(this);" class="form-control border-0">
-                                            <label id="upload-label" for="upload" class="font-weight-light text-muted">Choose file</label>
-                                            <div class="input-group-append">
-                                                <label for="upload" class="btn btn-light m-0 rounded-pill px-4"> <i class="fa fa-cloud-upload mr-2 text-muted"></i><small class="text-uppercase font-weight-bold text-muted">Choose file</small></label>
-                                            </div>
-                                        </div>
-
-                                    </div> -->
-                                </div><br>
-                                <div class="form-group justify-content-center d-flex">
-                                    <div id="submit-btn">
-                                        <div class="sbt form-row">
-                                            <button class="btn btn-primary m-0 rounded-pill px-4" type="submit" id="submit" style="min-width: 500px;"target="hidden_iframe">Submit</button>
+                                            <input id="upload" type="file" class="form-control border-0" name="file">
                                         </div>
                                     </div>
+                                </div><br>
+
+                                <div class="form-group justify-content-center d-flex">
+                                    <div id="submit-btn">
+                                        <div class="form-row"><button class="btn btn-primary  m-0 rounded-pill px-4" name="submit" type="submit" style="min-width: 500px;" >Submit</button></div>
+                                    </div>
                                 </div>
+
+                                </div><br>
                             </form>
                         </div><br>
-                        <!-- <div class="col">
-                            <h3 id="fail" class="text-center text-danger d-none"><br>Form not Submitted&nbsp;<a href="contact.html">Try Again</a><br><br></h3>
-                            <h3 id="success-1" class="text-center text-success d-none"><br>Form Submitted Successfully&nbsp;<a href="contact.html">Send Another Response</a><br><br></h3>
-                        </div> -->
                     </section>
                 </div>
             
