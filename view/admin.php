@@ -1,3 +1,11 @@
+<?php
+
+    require_once('../database/connection.php');
+
+   
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,10 +42,8 @@
         <caption> List of Canditate</caption>
   <thead class="table-dark">
     <tr>
-      <th scope="col">#</th>
       <th scope="col">firstname</th>
       <th scope="col">lastname</th>
-      <th scope="col">username</th>
       <th scope="col">email</th>
       <th scope="col">address</th>
       <th scope="col">gender</th>
@@ -49,6 +55,9 @@
   </thead>
   <tbody>
     <tr>
+
+
+    
       <th scope="row"></th>
       <td></td>
       <td></td>
