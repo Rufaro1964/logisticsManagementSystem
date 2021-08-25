@@ -59,7 +59,7 @@
             <div class="form__input-group">
                 <input type="password" id="signupConfirmPassword" class="form__input" autofocus placeholder="Confirm Password" name="confirm_password" required>
             </div>
-            <button class="form__button" id="signupSubmit" type="submit" name="submit">Continue</button>
+            <button class="form__button" id="signupSubmit" type="submit" name="submit">Continue</button><br>
             <p class="form__text">
                 <a class="form__link" href="sign-in.php" id="linkLogin">Already have an account? Sign in</a>
             </p>

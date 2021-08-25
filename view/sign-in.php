@@ -47,7 +47,7 @@
             <button class="form__button" type="submit">Log in</button>
 
             <p class="form__text">
-                <a class="form__link" href="sign-up.html" id="">Click here to sign Up</a>
+                <a class="form__link" href="sign-up.php" id="">Click here to sign Up</a>
             </p>
 
         </form>
@@ -55,7 +55,6 @@
     </div>
 
 
-    <!-- Rufaro note: Javascript CDN includes start here -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
 </body>
 
