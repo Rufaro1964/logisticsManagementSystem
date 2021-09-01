@@ -402,7 +402,7 @@
 
 
                                 <!-- LICENSE INFROMATION STARTS FROM HERE -->
-                                <!-- <div class="form-group">
+                                <div class="form-group">
                                     <h1 class="text-center text-capitalize">Driving License<br></h1> 
                                     <div class="form-row">
                                         <div class="col-md-6">
@@ -429,7 +429,7 @@
                                             <p><strong>Other Class</strong>&nbsp;<span class="text-danger">*</span></p><input class="form-control" type="text" required="" name="other_class">
                                         </div>
                                     </div>
-                                </div><br> -->
+                                </div><br>
                                 
                                 <div class="form-group"><p><strong>Your Picture </strong><span class="text-danger">*</span></p>
                                     <div class="file">
@@ -475,12 +475,12 @@
         </div><a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a>
     </div>
     <script src="../assets/javascript/main.js"></script>
-    <!-- <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/chart.min.js"></script>
     <script src="assets/js/bs-init.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.js"></script>
-    <script src="assets/js/theme.js"></script> -->
+    <script src="assets/js/theme.js"></script>
 </body>
 
 </html>
