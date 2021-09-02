@@ -47,21 +47,15 @@
 
      <!-- table query field  -->
 <div class="container mt-5" id="get">
-<table id="table_id" >
+<table id="table_id_kn" >
     <thead>
         <tr>
             <th>id</th>
+            <th>user_id</th>
             <th>firstname</th>
             <th>lastname</th>
-            <th>username</th>
-            <th>email</th>
-            <th>address</th>
-            <th>gender</th>
-            <th>d_o_b</th>
-            <th>country</th>
-            <th>nrc</th>
-            <th>phone</th>
-            
+            <th>relationship</th>
+            <th>phone</th>         
         </tr>
     </thead>
     
@@ -71,22 +65,16 @@
 
 <script type="text/javascript">
     $(document).ready( function () {
-        $('#table_id').DataTable({
+        $('#table_id_kn').DataTable({
             "bProcessing":true,
-            "sAjaxSource":"../database/get.php",
+            "sAjaxSource":"../database/get2.php",
             "aoColumns":[
                 {mData:'id' },
+                {mData: 'user_id' },
                 {mData: 'firstname' },
                 {mData: 'lastname' },
-                {mData: 'username' },
-                {mData: 'email' },
-                {mData: 'address' },
-                {mData: 'gender' },
-                {mData: 'd_o_b' },
-                {mData: 'country' },
-                {mData: 'nrc' },
+                {mData: 'relationship' },
                 {mData: 'phone' }
-                
             ]
         });
     } );

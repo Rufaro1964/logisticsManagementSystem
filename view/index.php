@@ -31,8 +31,9 @@
     <header class="page-header header container-fluid" id="header">
         <div class="overlay"></div>
         <div class="description">
-            <h1>Welcome to the Landing Page!</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque interdum quam odio, quis placerat ante luctus eu. Sed aliquet dolor id sapien rutrum, id vulputate quam iaculis. Suspendisse consectetur mi id libero fringilla, in pharetra sem ullamcorper.</p>
+            <h1>Welcome to the <en>SECURETRANCES HC&S </en>!</h1>
+            <div style="padding:5dp"></div>
+            <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque interdum quam odio, quis placerat ante luctus eu. Sed aliquet dolor id sapien rutrum, id vulputate quam iaculis. Suspendisse consectetur mi id libero fringilla, in pharetra sem ullamcorper.</p> -->
             <a class="btn btn-outline-light btn-lg download-button" href="./sign-in.php">login!</a>
             <a class="btn btn-outline-light btn-lg download-button" href="./sign-up.php">Sign up!</a>
             

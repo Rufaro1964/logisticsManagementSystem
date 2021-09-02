@@ -47,21 +47,17 @@
 
      <!-- table query field  -->
 <div class="container mt-5" id="get">
-<table id="table_id" >
+<table id="table_id_lc" >
     <thead>
         <tr>
             <th>id</th>
-            <th>firstname</th>
-            <th>lastname</th>
-            <th>username</th>
-            <th>email</th>
-            <th>address</th>
-            <th>gender</th>
-            <th>d_o_b</th>
-            <th>country</th>
-            <th>nrc</th>
-            <th>phone</th>
-            
+            <th>user_id</th>
+            <th>lincence_number</th>
+            <th>class</th>
+            <th>other_class</th>
+            <th>year_of_issue</th>
+            <th>year_of_expiry</th>
+            <th>image_url</th>            
         </tr>
     </thead>
     
@@ -71,22 +67,18 @@
 
 <script type="text/javascript">
     $(document).ready( function () {
-        $('#table_id').DataTable({
+        $('#table_id_lc').DataTable({
             "bProcessing":true,
-            "sAjaxSource":"../database/get.php",
+            "sAjaxSource":"../database/get1.php",
             "aoColumns":[
                 {mData:'id' },
-                {mData: 'firstname' },
-                {mData: 'lastname' },
-                {mData: 'username' },
-                {mData: 'email' },
-                {mData: 'address' },
-                {mData: 'gender' },
-                {mData: 'd_o_b' },
-                {mData: 'country' },
-                {mData: 'nrc' },
-                {mData: 'phone' }
-                
+                {mData: 'user_id' },
+                {mData: 'licence_number' },
+                {mData: 'class' },
+                {mData: 'other_class' },
+                {mData: 'year_of_issue' },
+                {mData: 'year_of_issue' },
+                {mData: 'image_url' },
             ]
         });
     } );

@@ -6,25 +6,6 @@
 
     }else{
         $session_id = $_SESSION['id'];
-<<<<<<< HEAD
-
-        if(isset($_POST['firstname']) AND isset($_POST['lastname']) AND isset($_POST['nrc']) AND isset($_POST['dob']) AND isset($_POST['gender']) AND isset($_POST['phone']) AND isset($_POST['email']) AND isset($_POST['address']) AND isset($_POST['country']) AND isset($_FILES['file'])){
-            
-            $firstname = $_POST['firstname'];
-            $lastname = $_POST['lastname'];
-            $nrc = $_POST['nrc'];
-            $dob = $_POST['dob'];
-            $gender = $_POST['gender'];
-            $phone = $_POST['phone'];
-            $address = $_POST['address'];
-            $country = $_POST['country'];
-            $first_login = 'no';
-            $file = $_FILES['file'];
-
-            
-        }
-=======
->>>>>>> parent of ba628aa (touching up signup form)
     }
 
 ?>
@@ -427,13 +408,6 @@
                                             <p><strong>Other Class</strong>&nbsp;<span class="text-danger">*</span></p><input class="form-control" type="text" required="" name="other_class">
                                         </div>
                                     </div>
-<<<<<<< HEAD
-                                </div><br>
-                                
-                                <div class="form-group"><p><strong>Your Picture </strong><span class="text-danger">*</span></p>
-                                    <div class="file">
-                                    <!-- Upload image input -->
-=======
                                 </div>
                                 <!--
                                 <div class="form-group">
@@ -450,18 +424,9 @@
                                 <div class="form-group"><p><strong>Your Picture </strong><span class="text-danger">*</span></p>
                                     <div class="file">
                                     <!-- Upload image input-->
->>>>>>> parent of ba628aa (touching up signup form)
                                         <div class="input-group mb-3 px-2 py-2 rounded-pill bg-white shadow-sm ">
                                             <input id="upload" type="file" class="form-control border-0" name="file">
                                         </div>
-<<<<<<< HEAD
-                                    </div>
-                                </div><br>
-
-                                <div class="form-group justify-content-center d-flex">
-                                    <div id="submit-btn">
-                                        <div class="form-row"><button class="btn btn-primary  m-0 rounded-pill px-4" name="submit" type="submit" style="min-width: 500px;" >Submit</button></div>
-=======
 
                                         <!-- Uploaded image area-->
                                         <p class="font-italic  text-center">The image uploaded will be rendered inside the box below.</p>
@@ -477,21 +442,16 @@
                                 <div class="form-group justify-content-center d-flex">
                                     <div id="submit-btn">
                                         <div class="sbt form-row"><button class="btn btn-primary btn-light m-0 rounded-pill px-4" type="button" style="min-width: 500px;" action method="POST" target="hidden_iframe">Submit</button></div>
->>>>>>> parent of ba628aa (touching up signup form)
                                     </div>
                                 </div>
 
                                 </div><br>
                             </form>
-<<<<<<< HEAD
-                        </div><br>
-=======
                         </div>
                         <div class="col">
                             <h3 id="fail" class="text-center text-danger d-none"><br>Form not Submitted&nbsp;<a href="contact.html">Try Again</a><br><br></h3>
                             <h3 id="success-1" class="text-center text-success d-none"><br>Form Submitted Successfully&nbsp;<a href="contact.html">Send Another Response</a><br><br></h3>
                         </div>
->>>>>>> parent of ba628aa (touching up signup form)
                     </section>
                 </div>
             
