@@ -1,10 +1,10 @@
-var ready = (callback) => {
-    if (document.readyState != "loading") callback();
-    else document.addEventListener("DOMContentLoaded", callback);
-}
-ready(() => {
-    document.querySelector(".header").style.height = window.innerHeight + "px";
-})
+// var ready = (callback) => {
+//     if (document.readyState != "loading") callback();
+//     else document.addEventListener("DOMContentLoaded", callback);
+// }
+// ready(() => {
+//     document.querySelector(".header").style.height = window.innerHeight + "px";
+// })
 
 $(document).ready(function(){
 
@@ -24,31 +24,33 @@ $(document).ready(function(){
     $('#createAccount').submit(function(e){
        
         if(!isMatchedPassword(signupPassword.val(), signupConfirmPassword.val())){
-            showResult(divMessage, "Passwords do not match.");   
+            divMessage.text('The passwords do not match');
+            divMessage.show();
+            
+            setTimeout(() => {
+                divMessage.hide();
+            }, 5000);
+                
         }else{
+
             $.ajax({
                 type:"POST",
                 url:"sign-up.php",
                 data:{
                     email: email.val(),
                     username: username.val(),
-                    password: signupPassword.val()
+                    password: signupPassword.val(),
+                    confirmPassword: signupConfirmPassword.val()
                 }, 
                 success:function(data){
-                    if(data != "Successfully registered"){
-                        showResult(divMessage, data);
-                    }else{
-                        alert(data+". You will now be redirected to the sign in page");
-                        window.location="sign-in.php";
-                    }
+                    alert("User has been successfully registered. You will now be redirected to the Login page");
+                    window.location="sign-in.php";
                 }
             })
 
         }
         e.preventDefault();
     }); 
-
-
 
 
 
@@ -64,22 +66,6 @@ $(document).ready(function(){
             return true;
         }
         return false;
-    }
-
-
-
-    /**
-     * 
-     * @param {*} element 
-     * @param {*} message 
-     */
-    function showResult(element, message){
-        element.text(message);
-            element.show();
-            
-            setTimeout(() => {
-                element.hide();
-            }, 5000);
     }
     
 });
