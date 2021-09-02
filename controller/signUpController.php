@@ -48,8 +48,6 @@
         
         public function updateUser($user_id, $firstname, $lastname, $address, $phone, $identification_no, $gender, $country, $dob, $first_login, $file){
 
-<<<<<<< HEAD
-            $this->helper->uploadFile($file);
 
             $statement = $this->dbConnection->prepare("UPDATE users SET `firstname`=?, `lastname`=?, `address`=?, `gender`=?, `d_o_b`=?, `country`=?, `nrc`=?, `phone`=?, `first_login`=? WHERE users.id=?");
             $statement->bind_param("sssssssssi", $firstname, $lastname, $address, $gender, $dob, $country, $identification_no, $phone,$first_login, $user_id);
@@ -57,14 +55,12 @@
                 return true;
             }
             return false;   
-=======
             $statement = $this->dbConnection->prepare("UPDATE TABLE users SET `firstname`=?, `lastname`=?, `address`=?, `gender`=?, `d_o_b`=?, `country`=?, `nrc`=?, `phone`=? WHERE users.id=?");
             $statement->bind_param("ssssssssi", $firstname, $lastname, $address, $gender, $dob, $country, $identification_no, $phone, $user_id);
             if($statement->execute()){
                 return true;
             }
             return false;
->>>>>>> parent of ba628aa (touching up signup form)
         }
 
 

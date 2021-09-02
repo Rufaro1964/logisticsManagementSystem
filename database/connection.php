@@ -5,8 +5,8 @@
         private $connection;
         private $host = 'localhost';
         private $username = 'root';
-        private $password = 'Demaga_360';
-        private $database = 'logst';
+        private $password = '';
+        private $database = 'logsiticsmanagementsystem';
         
 
         public function __construct(){}
