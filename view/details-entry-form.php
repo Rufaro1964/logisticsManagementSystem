@@ -6,6 +6,25 @@
 
     }else{
         $session_id = $_SESSION['id'];
+<<<<<<< HEAD
+=======
+
+        if(isset($_POST['firstname']) AND isset($_POST['lastname']) AND isset($_POST['nrc']) AND isset($_POST['dob']) AND isset($_POST['gender']) AND isset($_POST['phone']) AND isset($_POST['email']) AND isset($_POST['address']) AND isset($_POST['country']) AND isset($_FILES['file'])){
+            
+            $firstname = $_POST['firstname'];
+            $lastname = $_POST['lastname'];
+            $nrc = $_POST['nrc'];
+            $dob = $_POST['dob'];
+            $gender = $_POST['gender'];
+            $phone = $_POST['phone'];
+            $address = $_POST['address'];
+            $country = $_POST['country'];
+            $first_login = 'no';
+            $file = $_FILES['file'];
+
+            
+        }
+>>>>>>> 0527883ad742f4e1f1cf632bd5a35fab08785d9c
     }
 
 ?>
@@ -358,7 +377,7 @@
                               
                               
                                 <!-- NEXT OF KIN INFORMATION STARTS FROM HERE -->
-                                <!-- <div class="form-group">
+                                <div class="form-group">
                                     <h1 class="text-center text-capitalize">Next of kin<br></h1>  
                                     <div class="form-row">
                                         <div class="col">
@@ -376,7 +395,7 @@
                                             <p><strong>Contact</strong>&nbsp;<span class="text-danger">*</span></p><input class="form-control" type="text" required="" name="nok_contact">
                                         </div>
                                     </div>
-                                </div><br><br><hr> -->
+                                </div><br><br><hr>
 
 
 
@@ -408,6 +427,14 @@
                                             <p><strong>Other Class</strong>&nbsp;<span class="text-danger">*</span></p><input class="form-control" type="text" required="" name="other_class">
                                         </div>
                                     </div>
+<<<<<<< HEAD
+=======
+                                </div><br>
+                                
+                                <div class="form-group"><p><strong>Your Picture </strong><span class="text-danger">*</span></p>
+                                    <div class="file">
+                                    <!-- Upload image input -->
+>>>>>>> 0527883ad742f4e1f1cf632bd5a35fab08785d9c
                                 </div>
                                 <!--
                                 <div class="form-group">
@@ -427,6 +454,15 @@
                                         <div class="input-group mb-3 px-2 py-2 rounded-pill bg-white shadow-sm ">
                                             <input id="upload" type="file" class="form-control border-0" name="file">
                                         </div>
+<<<<<<< HEAD
+=======
+                                    </div>
+                                </div><br>
+
+                                <div class="form-group justify-content-center d-flex">
+                                    <div id="submit-btn">
+                                        <div class="form-row"><button class="btn btn-primary  m-0 rounded-pill px-4" name="submit" type="submit" style="min-width: 500px;" >Submit</button></div>
+>>>>>>> 0527883ad742f4e1f1cf632bd5a35fab08785d9c
 
                                         <!-- Uploaded image area-->
                                         <p class="font-italic  text-center">The image uploaded will be rendered inside the box below.</p>
@@ -447,6 +483,10 @@
 
                                 </div><br>
                             </form>
+<<<<<<< HEAD
+=======
+                        </div><br>
+>>>>>>> 0527883ad742f4e1f1cf632bd5a35fab08785d9c
                         </div>
                         <div class="col">
                             <h3 id="fail" class="text-center text-danger d-none"><br>Form not Submitted&nbsp;<a href="contact.html">Try Again</a><br><br></h3>
