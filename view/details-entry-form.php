@@ -374,7 +374,7 @@
                               
                               
                                 <!-- NEXT OF KIN INFORMATION STARTS FROM HERE -->
-                                <!-- <div class="form-group">
+                                <div class="form-group">
                                     <h1 class="text-center text-capitalize">Next of kin<br></h1>  
                                     <div class="form-row">
                                         <div class="col">
@@ -392,7 +392,7 @@
                                             <p><strong>Contact</strong>&nbsp;<span class="text-danger">*</span></p><input class="form-control" type="text" required="" name="nok_contact">
                                         </div>
                                     </div>
-                                </div><br><br><hr> -->
+                                </div><br><br><hr>
 
 
 

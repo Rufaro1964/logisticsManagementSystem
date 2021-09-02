@@ -42,13 +42,7 @@
 
 
 
-<<<<<<< HEAD
-        
-        public function updateUser($user_id, $firstname, $lastname, $address, $phone, $identification_no, $gender, $country, $dob, $first_login, $file){
-
-=======
         public function updateUser($user_id, $firstname, $lastname, $address, $phone, $identification_no, $gender, $country, $dob, $first_login){
->>>>>>> parent of bf06dbc (.)
 
             $statement = $this->dbConnection->prepare("UPDATE users SET `firstname`=?, `lastname`=?, `address`=?, `gender`=?, `d_o_b`=?, `country`=?, `nrc`=?, `phone`=?, `first_login`=? WHERE users.id=?");
             $statement->bind_param("sssssssssi", $firstname, $lastname, $address, $gender, $dob, $country, $identification_no, $phone,$first_login, $user_id);
